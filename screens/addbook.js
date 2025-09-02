@@ -7,6 +7,7 @@ const FormScreen = ({ navigation }) => {
   const [isbn, setIsbn] = useState('');
   const [publishedDate, setPublishedDate] = useState('');
   const [genre, setGenre] = useState('');
+  const [Added_Date, setAdded_Date] = useState('');
 
   const handleSubmit = () => {
     navigation.navigate('Confirmation', {
@@ -15,6 +16,7 @@ const FormScreen = ({ navigation }) => {
       isbn,
       publishedDate,
       genre,
+      Added_Date,
     });
   };
 
@@ -59,6 +61,14 @@ const FormScreen = ({ navigation }) => {
         onChangeText={setGenre}
         value={genre}
         placeholder="Enter genre"
+      />
+
+      <Text style={styles.label}>Date_Added:</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={setAdded_Date}
+        value={Added_Date}
+        placeholder="YYYY-MM-DD"
       />
 
       <Button title="Submit" onPress={handleSubmit} />

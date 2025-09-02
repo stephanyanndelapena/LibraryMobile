@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
 const homescreen = ({ navigation, route }) => {
-  const { title, author, isbn, publishedDate, genre } = route.params;
+  const { title, author, isbn, publishedDate, genre, Added_Date} = route.params;
 
   return (
     <View style={styles.container}>
@@ -34,6 +34,11 @@ const homescreen = ({ navigation, route }) => {
         <Text style={styles.value}>{genre}</Text>
       </View>
       
+      <View style={styles.detailContainer}>
+        <Text style={styles.label}>Added Date:</Text>
+        <Text style={styles.value}>{Added_Date}</Text>
+      </View>
+
       <Button title="Go Back" onPress={() => navigation.goBack()} />
     </View>
   );
